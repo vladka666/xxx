@@ -8,7 +8,7 @@ int main() {
     std::cin >> n;
 
     for (i = 4; i <= n; i++) s = s + (float)1 / (float)i;
-    std::cout << "Sum: 2 + 1/2 + ... + 1/n: " << s << std::endl;
+    std::cout << "Sum: 1 + 1/2 + ... + 1/n: " << s << std::endl;
 
     return 0;
 }
