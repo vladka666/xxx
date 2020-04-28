@@ -1,53 +1,37 @@
 #include <iostream>
 
-void showChoice() {
-    std::cout << "Enter ection (+, -, *, /) then enter 2 numbers" << std::endl;
-}
+int simple_numbers(int x, int y) {
+    int a, b, c, d, l = 0;
 
-double add(double x, double y) {
-    return x + y;
-}
+    for (a = x; a <= y; a++) {
+        c = a / 2;
+        d = 0;
 
-double substrcut(double x, double y) {
-    return x - y;
-}
+        for (b = 2; b <= c; b++) {
+            if ((a % b) == 0) {
+                d++;
+                break;
+            }
+        }
 
-double multiply(double x, double y) {
-    return x * y;
-}
+        if (d == 0) {
+            std::cout << a << "\t";
+            l++;
+            if ((l > 0) && ((l % 10) == 0)) {
+                std::cout << std::endl;
+            }
+        }
+    }
 
-double divide(double x, double y) {
-    return x / y;
+    return l;
 }
 
 int main() {
-    double x, y;
-    char action;
+    int x, y;
 
-    showChoice();
-    std::cout << "Enter action" << std::endl;
-    std::cin >> action;
-    std::cout << "Enter first num" << std::endl;
-    std::cin >> x;
-    std::cout << "Enter second num" << std::endl;
-    std::cin >> y;
-
-    switch (action)
-    {
-        case '+':
-            std::cout << "Your sum is: " << add(x, y) << std::endl;
-            break;
-        case '-':
-            std::cout << "Your substruct is: " << substrcut(x, y) << std::endl;
-            break;
-        case '*':
-            std::cout << "Your multiply is: " << multiply(x, y) << std::endl;
-            break;
-        case '/':
-            std::cout << "Your divide is: " << divide(x, y) << std::endl;
-            break;
-        default:;
-    }
+    std::cout << "Enter 2 nums: " << std::endl;
+    std::cin >> x >> y;
+    std::cout << "Count of  simple nums: " << simple_numbers(x, y) << std::endl;
 
     return 0;
 }
