@@ -1,8 +1,8 @@
 #include <iostream>
 
 int main() {
-    int size = 10
-    double arr[10];
+    int size = 20
+    double arr[20];
 
     for (int i = size - 1; i >= 0; --i) {
         std::cout << "Enter " << size - i << " array num" << std::endl;
